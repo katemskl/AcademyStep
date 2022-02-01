@@ -77,6 +77,42 @@ class Book:
         self.__author = kwargs.get('author')
         self.__price = kwargs.get('price')
 
+    def get_name(self):
+        return self.__name
+
+    def set_name(self, new_name):
+        self.__name = new_name
+
+    def get_year(self):
+        return self.__year
+
+    def set_year(self, new_year):
+        self.__year = new_year
+
+    def get_publisher(self):
+        return self.__publisher
+
+    def set_publisher(self, new_publisher):
+        self.__publisher = new_publisher
+
+    def get_genre(self):
+        return self.__genre
+
+    def set_genre(self, new_genre):
+        self.__genre = new_genre
+
+    def get_author(self):
+        return self.__author
+
+    def set_color(self, new_author):
+        self.__author = new_author
+
+    def get_price(self):
+        return self.__price
+
+    def set_price(self, new_price):
+        self.__price = new_price
+
     def __repr__(self):
         return f'Name of book: {self.__name}\n' \
                f'Year of issue: {self.__year}\n' \
@@ -90,3 +126,4 @@ book = Book(name='Romeo and Juliet', year='2016', price='300', publisher='Britis
             author='William Shakespeare')
 
 print(book)
+print(book.get_price())
