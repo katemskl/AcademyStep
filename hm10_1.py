@@ -59,4 +59,34 @@ class Car:
 
 car1 = Car(name='RAV-4', year_issue='2021', creator='Toyota', fuel_volume='1.8', color='white', price='920000')
 
-print(car1)
+# print(car1)
+
+#task 2
+
+"""Реализуйте класс «Книга». Необходимо хранить в полях класса: название книги, 
+год выпуска, издателя, жанр, автора, цену. Реализуйте методы класса для ввода 
+данных, вывода данных, реализуйте доступ к отдельным полям через методы класса."""
+
+
+class Book:
+    def __init__(self, **kwargs):
+        self.__name = kwargs.get('name')
+        self.__year = kwargs.get('year')
+        self.__publisher = kwargs.get('publisher')
+        self.__genre = kwargs.get('genre')
+        self.__author = kwargs.get('author')
+        self.__price = kwargs.get('price')
+
+    def __repr__(self):
+        return f'Name of book: {self.__name}\n' \
+               f'Year of issue: {self.__year}\n' \
+               f'Publisher: {self.__publisher}\n' \
+               f'Genre: {self.__genre}\n' \
+               f'Author: {self.__author}\n' \
+               f'Price: {self.__price}'
+
+
+book = Book(name='Romeo and Juliet', year='2016', price='300', publisher='British books', genre='Classic, tragedy',
+            author='William Shakespeare')
+
+print(book)
