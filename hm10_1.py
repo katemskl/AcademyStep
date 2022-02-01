@@ -125,5 +125,5 @@ class Book:
 book = Book(name='Romeo and Juliet', year='2016', price='300', publisher='British books', genre='Classic, tragedy',
             author='William Shakespeare')
 
-print(book)
-print(book.get_price())
+# print(book)
+# print(book.get_price())
