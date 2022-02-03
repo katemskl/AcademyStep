@@ -1,4 +1,5 @@
-#task 1
+from datetime import date, datetime
+# task 1
 
 """Реализуйте класс «Автомобиль». Необходимо хранить в полях класса:
 название модели, год выпуска, производителя, объем двигателя, цвет
@@ -61,7 +62,7 @@ car1 = Car(name='RAV-4', year_issue='2021', creator='Toyota', fuel_volume='1.8',
 
 # print(car1)
 
-#task 2
+# task 2
 
 """Реализуйте класс «Книга». Необходимо хранить в полях класса: название книги, 
 год выпуска, издателя, жанр, автора, цену. Реализуйте методы класса для ввода 
@@ -127,3 +128,63 @@ book = Book(name='Romeo and Juliet', year='2016', price='300', publisher='Britis
 
 # print(book)
 # print(book.get_price())
+
+
+# task 3
+
+
+"""Реализуйте класс «Стадион». Необходимо хранить в полях класса: 
+название стадиона, дату открытия, страну, город, вместимость. 
+Реализуйте методы класса для ввода данных, вывода данных, реализуйте доступ к отдельным полям через методы класса."""
+
+
+class Stadium:
+    def __init__(self, **kwargs):
+        self.name = kwargs.get('name')
+        self.date = kwargs.get('date')
+        self.country = kwargs.get('country')
+        self.city = kwargs.get('city')
+        self.capacity = kwargs.get('capacity')
+
+    def get_name(self):
+        return self.name
+
+    def set_name(self, new):
+        self.name = new
+
+    def get_date(self):
+        return self.date
+
+    def set_date(self, new):
+        self.date = new
+
+    def get_country(self):
+        return self.country
+
+    def set_country(self, new):
+        self.country = new
+
+    def get_city(self):
+        return self.city
+
+    def set_city(self, new):
+        self.city = new
+
+    def get_capacity(self):
+        return self.capacity
+
+    def set_capacity(self, new):
+        self.capacity = new
+
+    def time_from_open(self):
+        then = datetime.strptime(self.date, '%d.%m.%Y')
+        return date.today().year - then.year
+
+    def __repr__(self):
+        return f'Name of stadium: {self.name}\nOpening date: {self.date}\n' \
+               f'Country: {self.country}\nCity: {self.city}\nCapacity: {self.capacity}'
+
+
+stadium = Stadium(name='Olimpiyski', date='23.01.1983', country='Ukraine', city='Kiyv', capacity=10000)
+
+print(stadium.time_from_open())
