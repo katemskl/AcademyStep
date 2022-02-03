@@ -47,25 +47,39 @@
 # print(human)
 # # print(human.from_birth_year('mike', human.year))
 # print(Human.from_birth_year(23))
-import time
+# import time
+#
+#
+# def decorator(iters):
+#     def actual_decorator(func):
+#         def wrapper(a):
+#             for _ in range(iters):
+#                 start = time.time()
+#                 res = func(a)
+#                 print(f'Status code of response is {res}')
+#                 stop = time.time()
+#                 print(f'Time - {(stop-start)} seconds')
+#         return wrapper
+#     return actual_decorator
+#
+#
+# @decorator(iters=5)
+# def hello(a):
+#     return a
+#
+#
+# hello('aa')
+
+def same(list1, list_squ):
+    flag = True
+    for num in list1:
+        flag = False
+        if num ** 2 in list_squ:
+            flag = True
+    return flag
 
 
-def decorator(iters):
-    def actual_decorator(func):
-        def wrapper(a):
-            for _ in range(iters):
-                start = time.time()
-                res = func(a)
-                print(f'Status code of response is {res}')
-                stop = time.time()
-                print(f'Time - {(stop-start)} seconds')
-        return wrapper
-    return actual_decorator
+print(same([2, 5, 3], [9, 4, 25]))
+print(same([1, 0, 5], [1, 2, 24]))
+print(same([], []))
 
-
-@decorator(iters=5)
-def hello(a):
-    return a
-
-
-hello('aa')
