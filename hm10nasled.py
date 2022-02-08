@@ -142,12 +142,33 @@ class Cruiser(Ship):
                f'Fuel: {self.fuel}\tCapacity: {self.capacity}'
 
 
-frigate = Frigate(name='Liberty', speed=300, fuel=250, weapon=400)
-print(frigate)
-print(frigate.attack(390))
-destroyer = Destroyer(name='Violet', speed=200, fuel=300, displacement=800)
-print(destroyer)
-print(destroyer.destroy_submarines(60))
-cruiser = Cruiser(name='Georgia', speed=350, fuel=900, capacity=800)
-print(cruiser)
-print(cruiser.sail())
+# frigate = Frigate(name='Liberty', speed=300, fuel=250, weapon=400)
+# print(frigate)
+# print(frigate.attack(390))
+# destroyer = Destroyer(name='Violet', speed=200, fuel=300, displacement=800)
+# print(destroyer)
+# print(destroyer.destroy_submarines(60))
+# cruiser = Cruiser(name='Georgia', speed=350, fuel=900, capacity=800)
+# print(cruiser)
+# print(cruiser.sail())
+
+# task 3
+
+"""Запрограммируйте класс Money (объект класса оперирует одной валютой) для работы с деньгами.
+В классе должны быть предусмотрены поле для хранения целой части денег 
+(доллары, евро, гривны и т.д.) и поле для хранения копеек (центы, евроценты, копейки и т.д.).
+Реализовать методы для вывода суммы на экран, задания значений для частей."""
+
+
+class Money:
+    def __init__(self, entire, coins, currency):
+        self.entire = entire
+        self.coins = coins
+        self.currency = currency
+
+    def __repr__(self):
+        return f'You have {self.entire} {self.currency} and {self.coins} cents'
+
+
+money = Money(70, 00, 'uah')
+print(money)
