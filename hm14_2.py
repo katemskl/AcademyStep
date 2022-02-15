@@ -16,18 +16,18 @@
 class Stack:
     def __init__(self):
         self.__storage = str()
-        self.__size = 10
+        # self.__size = 10
 
     @staticmethod
     def count_word(words):
         return len(words.split())
 
     def add_to_stack(self, words: str):
-        if self.count_word(self.__storage) + self.count_word(words) <= 10:
-            self.__storage += str(words) + ' '
-            return self.__storage
-        else:
-            return -1
+        # if self.count_word(self.__storage) + self.count_word(words) <= self.__size:
+        self.__storage += str(words) + ' '
+        return self.__storage
+        # else:
+        #     return -1
 
     def delete_from_stack(self):
         word_list = self.__storage.split()
@@ -45,7 +45,8 @@ class Stack:
         return False
 
     def is_fully(self):
-        if self.count_word(self.__storage) == self.__size:
+        # if self.count_word(self.__storage) == self.__size:
+        if self.count_word(self.__storage) != 0:
             return True
         return False
 
@@ -117,4 +118,3 @@ string.add_to_stack('can happend. with you if you give me.')
 string.add_to_stack('some money')
 print(string)
 string.main()
-
