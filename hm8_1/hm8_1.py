@@ -57,10 +57,23 @@ def get_data(file_name):
         return json.loads(data)
 
 
-dict1 = get_data('country_data')
-print(add_new_item(dict1, key='France', value='Paris'))
-print(delete_item(dict1, key='Ukraine'))
-print(find_item(dict1, key='US'))
-print(edit_item(dict1, key='US', value='Washington'))
-print(save_storage(file_name='country_data', storage=dict1))
-print(dict1)
+# dict1 = get_data('/Users/katamoskalcuk/PycharmProjects/AcademyStepA/hm8_1/country_data')
+# print(add_new_item(dict1, key='France', value='Paris'))
+# print(delete_item(dict1, key='Ukraine'))
+# print(find_item(dict1, key='US'))
+# print(edit_item(dict1, key='US', value='Washington'))
+# print(save_storage(file_name='/Users/katamoskalcuk/PycharmProjects/AcademyStepA/hm8_1/country_data', storage=dict1))
+# print(dict1)
+
+
+# task 2
+
+"""Есть некоторый словарь, который хранит названия музыкальных групп(исполнителей) и альбомов. 
+Название группы используется в качестве ключа, название альбомов в качестве значения. 
+Необходимо реализовать: добавление данных, удаление данных, поиск данных, редактирование данных, 
+сохранение и загрузку данных (используя упаковку и распаковку)."""
+
+dict2 = get_data('/Users/katamoskalcuk/PycharmProjects/AcademyStepA/hm8_1/group_data')
+print(add_new_item(dict2, key='Кино', value='Звезда по имени солнце'))
+print(save_storage(file_name='/Users/katamoskalcuk/PycharmProjects/AcademyStepA/hm8_1/group_data', storage=dict2))
+
