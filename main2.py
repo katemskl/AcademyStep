@@ -1,5 +1,5 @@
 import json
-import hashlib
+# import hashlib
 
 # x = [10, [3.141, 20, [30, 'qqz', 2.178]], 'foo']
 # print(x[1][2][1][2])
@@ -195,7 +195,7 @@ class LinkedList:
 
 # print(ll)
 
-def zeroes(base, number):
+def zeroes(number):
     factorial = 1
     ret = 0
     for i in range(number+1):
@@ -207,4 +207,5 @@ def zeroes(base, number):
         else:
             return ret
 
-print(zeroes(10, 10))
+
+print(zeroes(10))
