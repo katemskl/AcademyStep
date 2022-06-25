@@ -1,7 +1,8 @@
 from tkinter import *
 
-# first_number = 0
-# index_action = 0
+first_number = 0
+index_action = 0
+flag = True
 
 
 def show_action(act, entry):
@@ -20,18 +21,25 @@ def check_action(action):
     return actions.index(action)
 
 
-first_number = 0
-index_action = 0
+def button_click(number, entry):
+    show_action(number, entry)
+    global first_number, flag
+    if flag:
+        first_number = int(entry.get())
+        flag = False
 
 
-def make_action(entry, action="+"):
-    first_number = int(entry.get())
+def make_action(action, entry):
+    show_action(action, entry)
+    global index_action
     index_action = check_action(action)
-    global first_number, index_action
 
 
 def count_result(entry):
     second_number = int(entry.get())
+    global flag
+    flag = True
+    print(first_number, second_number)
     if index_action == 0:
         return first_number + second_number
     elif index_action == 1:
