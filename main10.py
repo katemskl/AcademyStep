@@ -27,3 +27,6 @@ KEY_RIGHT = 'd'
 main_frame = Frame()
 grid_cell = []
 matrix = []
+
+if __name__ == '__main__':
+    main(BACKGROUND_COLOR_GAME, SIZE, GRID_LEN, BACKGROUND_COLOR_CELL_EMPTY, GRID_PADDING, FONT, grid_cell)
