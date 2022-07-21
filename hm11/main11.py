@@ -1,13 +1,15 @@
 from main11_logic import *
 
 root = Tk()
-root.title('Notepad')
+root.title('unknown - Notepad')
 root.geometry('800x400')
+root.config(background='green')   # сподіваюсь це працює :)
+
 
 menu = Menu(root)
 root.config(menu=menu)
 
-text = Text(root)
+text = Text(root, font=('Times New Roman', 20))
 scroll = Scrollbar(root)
 scroll.pack(side=RIGHT, fill=Y)
 text.pack(expand=YES, fill=BOTH)
@@ -17,8 +19,8 @@ text.config(yscrollcommand=scroll.set)
 
 file_menu = Menu(menu, tearoff=0)
 file_menu.add_command(label='New', command=lambda: new(text))
-file_menu.add_command(label='Open as...', command=lambda: open_file(text))
-file_menu.add_command(label='Save as...', command=lambda: directory_file(text))
+file_menu.add_command(label='Open as...', command=lambda: open_file(root, text))
+file_menu.add_command(label='Save as...', command=lambda: directory_file(root, text))
 file_menu.add_command(label='Exit', command=lambda: exit_notepad(text))
 
 help_menu = Menu(menu, tearoff=0)

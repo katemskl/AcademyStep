@@ -2,7 +2,6 @@ import sys
 import tkinter.messagebox
 from tkinter import *
 from tkinter import filedialog
-from tkinter import messagebox
 
 
 def save_file(file_name, text):
@@ -11,16 +10,18 @@ def save_file(file_name, text):
         file.write(text_save + '\n')
 
 
-def directory_file(text):
+def directory_file(root, text):
     file_name = filedialog.asksaveasfilename(initialdir='/', title='Select file',
                                              filetypes=(('Text Documents', '*.txt'), ('all files', '*.*')))
+    root.title(f'{file_name} - Notepad')
     if file_name:
         save_file(file_name, text)
 
 
-def open_file(text):
+def open_file(root, text):
     file_name = filedialog.askopenfilename(initialdir='/', title='Open file',
                                            filetypes=(('Text Documents', '*.txt'), ('all files', '*.*')))
+    root.title(f'{file_name} - Notepad')
     if file_name:
         with open(file_name, 'r', encoding='utf-8') as file:
             text_open = file.read()
