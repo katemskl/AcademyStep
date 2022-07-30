@@ -26,7 +26,8 @@ KEY_RIGHT = 'd'
 
 main_frame = Frame()
 grid_cell = []
-matrix = []
+
 
 if __name__ == '__main__':
-    main(BACKGROUND_COLOR_GAME, SIZE, GRID_LEN, BACKGROUND_COLOR_CELL_EMPTY, GRID_PADDING, FONT, grid_cell)
+    main(BACKGROUND_COLOR_GAME, SIZE, GRID_LEN, BACKGROUND_COLOR_CELL_EMPTY, GRID_PADDING,
+         FONT, grid_cell, BACKGROUND_COLOR_DICT, CELL_COLOR_DICT, main_frame, KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT)
